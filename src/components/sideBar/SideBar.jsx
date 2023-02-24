@@ -9,7 +9,7 @@ import liked from '../../assets/heartIcon.svg';
 import music from '../../assets/musicIcon.svg';
 import games from '../../assets/controllerIcon.svg';
 import more from '../../assets/arrowIcon.svg';
-import userpic from '../../assets/subsuser.png';
+import ChannelAvatar from '../ChannelAvatar/ChannelAvatar';
 
 export function SideBar() {
 	return (
@@ -18,155 +18,33 @@ export function SideBar() {
 				<div className='side-bar__wrapper w-60'>
 					<div className='side-bar__wrapper-categories'>
 						<ul className='side-bar__list-top mb-10'>
-							<li className='side-bar__items mb-3'>
-								<button
-									className='side-bar__btn flex items-center'
-									title='Home'>
-									<img
-										src={homeBtn}
-										alt='icon'
-										className='side-bar__icon mr-2'
-										width='20'
-										height='19'
-									/>
-									Home
-								</button>
-							</li>
-							<li className='side-bar__items mb-3'>
-								<button
-									className='side-bar__btn flex items-center'
-									title='Trending'>
-									<img
-										src={trendingBtn}
-										alt='icon'
-										className='side-bar__icon mr-2'
-										width='16'
-										height='21'
-									/>
-									Trending
-								</button>
-							</li>
-							<li className='side-bar__items'>
-								<button
-									className='side-bar__btn flex items-center'
-									title='Subscriptions'>
-									<img
-										src={subscriptionsBtn}
-										alt='icon'
-										className='side-bar__icon mr-2'
-										width='18'
-										height='18'
-									/>
-									Subscriptions
-								</button>
-							</li>
+							<ChannelAvatar avatar={homeBtn} />
+							<ChannelAvatar avatar={trendingBtn} />
+							<ChannelAvatar avatar={subscriptionsBtn} />
 						</ul>
 
 						<ul className='side-bar__list-bottom mb-10'>
-							<li className='side-bar__items-bottom mb-5'>
-								<button
-									type='button'
-									title='Library'
-									className='side-bar__btn-bottom flex items-center'>
-									<img
-										src={library}
-										alt='icon'
-										className='side-bar__icon-bottom mr-3'
-									/>
-									Library
-								</button>
-							</li>
-							<li className='side-bar__items-bottom mb-5'>
-								<button
-									type='button'
-									title='History'
-									className='side-bar__btn-bottom flex items-center'>
-									<img
-										src={history}
-										alt='icon'
-										className='side-bar__icon-bottom mr-3'
-									/>
-									History
-								</button>
-							</li>
-							<li className='side-bar__items-bottom mb-5'>
-								<button
-									type='button'
-									title='Watch later'
-									className='side-bar__btn-bottom flex items-center'>
-									<img
-										src={later}
-										alt='icon'
-										className='side-bar__icon-bottom mr-3'
-									/>
-									Watch later
-								</button>
-							</li>
-							<li className='side-bar__items-bottom mb-5'>
-								<button
-									type='button'
-									title='Favourites'
-									className='side-bar__btn-bottom flex items-center'>
-									<img
-										src={favourites}
-										alt='icon'
-										className='side-bar__icon-bottom mr-3'
-									/>
-									Favourites
-								</button>
-							</li>
-							<li className='side-bar__items-bottom mb-5'>
-								<button
-									type='button'
-									title='Liked videos'
-									className='side-bar__btn-bottom flex items-center'>
-									<img
-										src={liked}
-										alt='icon'
-										className='side-bar__icon-bottom mr-3'
-									/>
-									Liked videos
-								</button>
-							</li>
-							<li className='side-bar__items-bottom mb-5'>
-								<button
-									type='button'
-									title='Music'
-									className='side-bar__btn-bottom flex items-center'>
-									<img
-										src={music}
-										alt='icon'
-										className='side-bar__icon-bottom mr-3'
-									/>
-									Music
-								</button>
-							</li>
-							<li className='side-bar__items-bottom mb-5'>
-								<button
-									type='button'
-									title='Games'
-									className='side-bar__btn-bottom flex items-center'>
-									<img
-										src={games}
-										alt='icon'
-										className='side-bar__icon-bottom mr-3'
-									/>
-									Games
-								</button>
-							</li>
-							<li className='side-bar__items-bottom mb-5'>
-								<button
-									type='button'
-									title='Show more'
-									className='side-bar__btn-bottom flex items-center'>
-									<img
-										src={more}
-										alt='icon'
-										className='side-bar__icon-bottom mr-3'
-									/>
-									Show more
-								</button>
-							</li>
+							<ChannelAvatar avatar={library} />
+							<ChannelAvatar avatar={history} />
+							<ChannelAvatar
+								avatar={later}
+								title={'Watch later'}
+							/>
+							<ChannelAvatar
+								avatar={favourites}
+								title={'Favourites'}
+							/>
+
+							<ChannelAvatar
+								avatar={liked}
+								title={'liked video'}
+							/>
+
+							<ChannelAvatar avatar={music} title={'Music'} />
+
+							<ChannelAvatar avatar={games} title={'Games'} />
+
+							<ChannelAvatar avatar={more} title={'Show more'} />
 						</ul>
 					</div>
 
@@ -176,95 +54,11 @@ export function SideBar() {
 						</h3>
 
 						<ul className='side-bar__subs-list'>
-							<li className='side-bar__subs-items mb-4'>
-								<button
-									className='side-bar__btn flex items-center'
-									title='Home'>
-									<img
-										src={userpic}
-										alt='icon'
-										className='side-bar__icon mr-4'
-										width='26'
-										height='26'
-									/>
-									Gussie Singleton
-								</button>
-							</li>
-
-							<li className='side-bar__subs-items mb-4'>
-								<button
-									className='side-bar__btn flex items-center'
-									title='Home'>
-									<img
-										src={userpic}
-										alt='icon'
-										className='side-bar__icon mr-4'
-										width='26'
-										height='26'
-									/>
-									Gussie Singleton
-								</button>
-							</li>
-
-							<li className='side-bar__subs-items mb-4'>
-								<button
-									className='side-bar__btn flex items-center'
-									title='Home'>
-									<img
-										src={userpic}
-										alt='icon'
-										className='side-bar__icon mr-4'
-										width='26'
-										height='26'
-									/>
-									Gussie Singleton
-								</button>
-							</li>
-
-							<li className='side-bar__subs-items mb-4'>
-								<button
-									className='side-bar__btn flex items-center'
-									title='Home'>
-									<img
-										src={userpic}
-										alt='icon'
-										className='side-bar__icon mr-4'
-										width='26'
-										height='26'
-									/>
-									Gussie Singleton
-								</button>
-							</li>
-
-							<li className='side-bar__subs-items mb-4'>
-								<button
-									className='side-bar__btn flex items-center'
-									title='Home'>
-									<img
-										src={userpic}
-										alt='icon'
-										className='side-bar__icon mr-4'
-										width='26'
-										height='26'
-									/>
-									Gussie Singleton
-								</button>
-							</li>
-
-							<li className='side-bar__subs-items'>
-								<button
-									className='side-bar__btn flex items-center'
-									title='Home'>
-									<img
-										src={userpic}
-										alt='icon'
-										className='side-bar__icon mr-4'
-										width='26'
-										height='26'
-									/>
-									Gussie Singleton
-								</button>
-							</li>
+							<ChannelAvatar />
+							<ChannelAvatar />
+							<ChannelAvatar />
+							<ChannelAvatar />
+							<ChannelAvatar />
 						</ul>
 					</div>
 				</div>
