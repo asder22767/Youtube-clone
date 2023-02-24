@@ -7,11 +7,12 @@ module.exports = {
       "2xl": "1920px",
     },
 
-    color: {
+    colors: {
       transparent: 'transparent',
       current: 'currentColor',
       "input": "#EBEBEB",
-      "reddish": "#FF0000"
+      "reddish": "#FF0000",
+      "sideBar": "#898989",
     },
 
     extend: {

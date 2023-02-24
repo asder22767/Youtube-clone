@@ -22,7 +22,7 @@ export function Header () {
                         </a>
 
                         <form className="header__form">
-                            <input type="text" className="header__input-search bg-neutral-200 w-560 p-2 px-4 rounded-3xl" title="search" placeholder="Search"/>
+                            <input type="text" className="header__input-search bg-input w-560 p-2 px-4 rounded-3xl" title="search" placeholder="Search"/>
                         </form>
                     </div>
 
