@@ -1,4 +1,4 @@
-import img from "./../assets/recImg.png";
+import img from "../../assets/recImg.png";
 
 export function MiddleCard () {
     return (
