@@ -11,7 +11,7 @@ function App() {
 
 				<MiddleCard />
 
-				<SmallCard />
+				{/* <SmallCard /> */}
 			</div>
 		</Layout>
 	);
