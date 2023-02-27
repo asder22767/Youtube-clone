@@ -13,6 +13,7 @@ module.exports = {
       "input": "#EBEBEB",
       "reddish": "#FF0000",
       "sideBar": "#898989",
+      "grayish": "#C2C2C2"
     },
 
     extend: {
