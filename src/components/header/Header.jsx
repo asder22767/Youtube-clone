@@ -5,8 +5,15 @@ import camera from '../../assets/cameraIcon.svg';
 import dots from '../../assets/dotsIcon.svg';
 import notifications from '../../assets/bellIcon.svg';
 import userPic from '../../assets/userpic.svg';
+import { CounterContext } from '../context/counterContext';
+import { useContext } from 'react';
+import { LanguageContext } from '../context/languageContext';
+import languageText from '../language/language';
 
 export function Header() {
+	const { counter } = useContext(CounterContext);
+	const { setLanguage, language } = useContext(LanguageContext);
+
 	return (
 		<header className='header mt-3 mb-8'>
 			<div className='container mx-auto px-5'>
@@ -43,8 +50,28 @@ export function Header() {
 						</form>
 					</div>
 
+					<h2>{languageText[language].header.title}</h2>
+
 					<div className='header__wrapper-right'>
 						<ul className='header__btn-list flex items-center'>
+							<li className='header__btn-items mr-10'>
+								<select
+									value={language}
+									className=''
+									onChange={(e) => {
+										setLanguage(e.target.value);
+										localStorage.setItem(
+											'language',
+											e.target.value
+										);
+									}}
+									id=''>
+									<option value='uz'>Uz</option>
+									<option value='ru'>Ru</option>
+									<option value='en'>Eng</option>
+								</select>
+							</li>
+
 							<li className='header__btn-items mr-10'>
 								<button className='header__btns '>
 									<img
@@ -71,6 +98,7 @@ export function Header() {
 
 							<li className='header__btn-items mr-10'>
 								<button className='header__btns'>
+									{counter}
 									<img
 										src={notifications}
 										alt=''

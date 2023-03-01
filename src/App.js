@@ -2,18 +2,25 @@ import './css/output.css';
 import { MiddleCard } from './components/middleCard/middleCard';
 import { SmallCard } from './components/smallCard/SmallCard';
 import Layout from './components/Layout/Layout';
+import React from 'react';
+import CounterContextProvider from './components/context/counterContext';
+import LanguageContextProvider from './components/context/languageContext';
 
 function App() {
 	return (
-		<Layout>
-			<div className='space-y-16'>
-				<SmallCard />
+		<CounterContextProvider>
+			<LanguageContextProvider>
+				<Layout>
+					<div className='space-y-16'>
+						<SmallCard />
 
-				<MiddleCard />
+						<MiddleCard />
 
-				{/* <SmallCard /> */}
-			</div>
-		</Layout>
+						{/* <SmallCard /> */}
+					</div>
+				</Layout>
+			</LanguageContextProvider>
+		</CounterContextProvider>
 	);
 }
 

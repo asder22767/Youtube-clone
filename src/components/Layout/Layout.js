@@ -5,7 +5,7 @@ import { SideBar } from '../sideBar/SideBar';
 const Layout = ({ children, isSinglePage }) => {
 	return (
 		<>
-			<Header />
+			<Header  />
 			{!isSinglePage ? (
 				<main>
 					<section className='home flex'>

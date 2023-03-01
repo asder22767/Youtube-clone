@@ -1,19 +1,12 @@
 import img from '../../assets/smallCardImg.jpg';
 import userPic from '../../assets/cardImg.png';
-import { useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
+import { CounterContext } from '../context/counterContext';
+// import { CounterContext } from '../../App';
 
 export function SmallCard() {
-	const [data, setData] = useState([]);
+	const { setCounter } = useContext(CounterContext);
 
-	useEffect(() => {
-		fetch('https://jsonplaceholder.typicode.com/posts')
-			.then((res) => res.json())
-			.then((data) => {
-				setData(data);
-			});
-	}, []);
-
-	console.log(data);
 	return (
 		<div>
 			<div className='flex items-center mb-7'>
@@ -23,11 +16,11 @@ export function SmallCard() {
 			</div>
 
 			<ul className='flex space-x-10'>
-				{data.map((post, i) => (
-					<p key={i}>{post.title}</p>
-				))}
-
-				<li className='w-64'>
+				<li
+					onClick={() => {
+						setCounter((prev) => prev + 1);
+					}}
+					className='w-64'>
 					<img
 						src={img}
 						alt='A Brief History Of Creation'
