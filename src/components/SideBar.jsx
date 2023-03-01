@@ -1,16 +1,16 @@
-import homeBtn from "./../../assets/homeIcon.svg";
-import trendingBtn from "./../../assets/trendingIcon.svg";
-import subscriptionsBtn from "./../../assets/subscriptionsIcon.svg";
-import library from "./../../assets/filesIcon.svg";
-import history from "./../../assets/historyIcon.svg";
-import later from "./../../assets/watchIcon.svg";
-import favourites from "./../../assets/starIcon.svg";
-import liked from "./../../assets/heartIcon.svg";
-import music from "./../../assets/musicIcon.svg";
-import games from "./../../assets/controllerIcon.svg";
-import more from "./../../assets/arrowIcon.svg";
-import userpic from "./../../assets/subsuser.png";
-import { ChannelAvatar } from "../channelAvatar/ChannelAvatar";
+import homeBtn from "./../assets/homeIcon.svg";
+import trendingBtn from "./../assets/trendingIcon.svg";
+import subscriptionsBtn from "./../assets/subscriptionsIcon.svg";
+import library from "./../assets/filesIcon.svg";
+import history from "./../assets/historyIcon.svg";
+import later from "./../assets/watchIcon.svg";
+import favourites from "./../assets/starIcon.svg";
+import liked from "./../assets/heartIcon.svg";
+import music from "./../assets/musicIcon.svg";
+import games from "./../assets/controllerIcon.svg";
+import more from "./../assets/arrowIcon.svg";
+import userpic from "./../assets/subsuser.png";
+import { ChannelAvatar } from "./ChannelAvatar";
 
 export function SideBar () {
     return (
@@ -46,7 +46,7 @@ export function SideBar () {
                     </div>
 
                     <div className="side-bar__subscriptions">
-                        <h3 className="side-bar__subs-heading h3 mb-7 font-semibold">Subscriptions</h3>
+                        <h3 className="side-bar__subs-heading h3 mb-7 font-bold">Subscriptions</h3>
 
                         <ul className="side-bar__subs-list space-y-4">
                             <ChannelAvatar avatar={userpic} title={"Gussie Singleton"}/>

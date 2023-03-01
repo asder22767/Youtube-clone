@@ -1,34 +1,31 @@
 import "./css/output.css";
-import { Header } from "./components/header/Header";
-import { MiddleCard } from "./components/middleCard/middleCard";
-import { SideBar } from "./components/sideBar/SideBar";
-import { SmallCard } from "./components/smallCard/SmallCard";
-import { Rendering } from "./renderingProcess/Rendering";
+import { Header } from "./components/Header";
+import { MiddleCard } from "./components/middleCard";
+import { SideBar } from "./components/SideBar";
+import { SmallCard } from "./components/SmallCard";
+import { Rendering } from "./utils/Rendering";
+import { BASE_URL } from "./utils/constantas";
+import axios from "axios";
+import { useEffect } from "react";
 
 function App() {
-  const [data, setData] = useState([]);
 
-  useEffect(() => {
-      fetch("https://63eb2069fb6b6b7cf7d842ca.mockapi.io/examproject/books")
-      .then((res) => res.json())
-      .then((json) => {
-          json = setData;
-      });
-  }, []);
-
+  const data = Rendering(BASE_URL + "books");
   return (
     <>
       <Header/>
       <main>
-        <section className="home flex">
-          <SideBar/>
-          
-          <div className="space-y-16">
-            <SmallCard/>
-
-            <MiddleCard/>
+        <section className="home">
+          <div className="flex container">
+            <SideBar/>
             
-            <SmallCard/>
+            <div className="space-y-16 h-1000 overflow-y-scroll">
+              <SmallCard data={data}/>
+              
+              <MiddleCard data={data}/>
+            
+              <SmallCard data={data}/>
+            </div>
           </div>
         </section>
       </main>

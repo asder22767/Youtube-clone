@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
-export function Rendering () {
+export function Rendering ( URL ) {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch("https://63eb2069fb6b6b7cf7d842ca.mockapi.io/examproject/books")
+        fetch(URL)
         .then((res) => res.json())
         .then((json) => {
-            json = setData;
+            setData(json);
         });
     }, []);
     

@@ -1,11 +1,11 @@
 import "./Header.scss";
-import burgerMenu from "./../../assets/menu.svg";
-import logo from "./../../assets/logo.svg";
-import camera from "./../../assets/cameraIcon.svg";
-import dots from "./../../assets/dotsIcon.svg";
-import notifications from "./../../assets/bellIcon.svg";
-import userPic from "./../../assets/userpic.svg";
-import { Buttons } from "../buttons/Buttons";
+import burgerMenu from "./../assets/menu.svg";
+import logo from "./../assets/logo.svg";
+import camera from "./../assets/cameraIcon.svg";
+import dots from "./../assets/dotsIcon.svg";
+import notifications from "./../assets/bellIcon.svg";
+import userPic from "./../assets/userpic.svg";
+import { Buttons } from "./Buttons";
 
 export function Header () {
     return (
@@ -18,7 +18,7 @@ export function Header () {
                             <img src={burgerMenu} alt="icon" width="20" height="17"/>
                         </button>
 
-                        <a href="/" className="header__logo mr-16">
+                        <a href="/" className="header__logo mr-28">
                             <img src={logo} alt="Logo of Youtube" width="116" height="25"/>
                         </a>
 

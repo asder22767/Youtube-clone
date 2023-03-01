@@ -16,13 +16,21 @@ module.exports = {
       "grayish": "#C2C2C2"
     },
 
+    fontFamily: {
+      "mulish": ["Mulish"],
+    },
+
     extend: {
       width: {
+        "400": "400px",
         "560": "560px",
-        "400": "400px"
+        "1000": "1000px",
+        "1190": "1190px"
       }
     },
   },
 
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
 }
