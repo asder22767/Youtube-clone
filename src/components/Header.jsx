@@ -1,16 +1,16 @@
 import "./Header.scss";
-import burgerMenu from "./../assets/menu.svg";
-import logo from "./../assets/logo.svg";
-import camera from "./../assets/cameraIcon.svg";
-import dots from "./../assets/dotsIcon.svg";
-import notifications from "./../assets/bellIcon.svg";
-import userPic from "./../assets/userpic.svg";
+import burgerMenu from "./../assets/images/menu.svg";
+import logo from "./../assets/images/logo.svg";
+import camera from "./../assets/images/cameraIcon.svg";
+import dots from "./../assets/images/dotsIcon.svg";
+import notifications from "./../assets/images/bellIcon.svg";
+import userPic from "./../assets/images/userpic.svg";
 import { Buttons } from "./Buttons";
 
 export function Header () {
     return (
-        <header className="header mt-3 mb-8">
-            <div className="container mx-auto px-5">
+        <header className="header pt-24">
+            <div className="container mx-auto px-6 fixed top-0 left-0 bg-white pt-3 pb-8">
                 <div className="header__wrapper flex justify-between items-center">
                     <div className="header__wrapper-left flex items-center">
                         <button type="button" title="burger-menu"

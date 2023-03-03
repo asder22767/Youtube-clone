@@ -16,7 +16,7 @@
   /* 2 */
   border-style: solid;
   /* 2 */
-  border-color: currentColor;
+  border-color: #e5e7eb;
   /* 2 */
 }
 
@@ -573,9 +573,8 @@ html {
   }
 }
 
-.sticky {
-  position: -webkit-sticky;
-  position: sticky;
+.fixed {
+  position: fixed;
 }
 
 .left-0 {
@@ -603,10 +602,6 @@ html {
   margin-bottom: 1.75rem;
 }
 
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
 .ml-4 {
   margin-left: 1rem;
 }
@@ -619,16 +614,12 @@ html {
   margin-right: 1rem;
 }
 
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
 .flex {
   display: flex;
 }
 
-.w-1190 {
-  width: 1190px;
+.w-1200 {
+  width: 1200px;
 }
 
 .w-400 {
@@ -649,6 +640,12 @@ html {
 
 .flex-shrink-0 {
   flex-shrink: 0;
+}
+
+.translate-y-20 {
+  --tw-translate-y: 5rem;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .flex-col {
@@ -691,10 +688,6 @@ html {
   overflow-x: scroll;
 }
 
-.overflow-y-scroll {
-  overflow-y: scroll;
-}
-
 .rounded-3xl {
   border-radius: 1.5rem;
 }
@@ -712,6 +705,11 @@ html {
   background-color: rgb(235 235 235 / var(--tw-bg-opacity));
 }
 
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-none {
   background-image: none;
 }
@@ -725,9 +723,33 @@ html {
   padding-right: 1rem;
 }
 
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.pb-14 {
+  padding-bottom: 3.5rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
+.pl-270 {
+  padding-left: 270px;
+}
+
+.pl-6 {
+  padding-left: 1.5rem;
+}
+
+.pt-24 {
+  padding-top: 6rem;
+}
+
+.pt-3 {
+  padding-top: 0.75rem;
 }
 
 .font-bold {
@@ -767,8 +789,8 @@ html {
 
   font-weight: 400;
 
-  src: url('../fonts/mulish-v12-latin-regular.woff2') format('woff2'),
-    url('../fonts/mulish-v12-latin-regular.woff') format('woff');
+  src: url('./../assets/fonts/mulish-v12-latin-regular.woff2') format('woff2'),
+    url('./../assets/fonts/mulish-v12-latin-regular.woff') format('woff');
 }
 
 @font-face {
@@ -780,6 +802,6 @@ html {
 
   font-weight: 700;
 
-  src: url('../fonts/mulish-v12-latin-700.woff2') format('woff2'),
-    url('../fonts/mulish-v12-latin-700.woff') format('woff');
+  src: url('./../assets/fonts/mulish-v12-latin-700.woff2') format('woff2'),
+    url('./../assets/fonts/mulish-v12-latin-700.woff') format('woff');
 }

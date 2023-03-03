@@ -1,10 +1,10 @@
-import img from "./../assets/smallCardImg.jpg";
-import userPic from "./../assets/cardImg.png"
+import img from "./../assets/images/smallCardImg.jpg";
+import userPic from "./../assets/images/cardImg.png"
 import { Cards } from "./Cards";
 
 export function SmallCard ({ data }) {
     return (
-    <div className="w-1190 flex flex-col">
+    <div className="w-1200 flex flex-col">
         <div className="flex items-center mb-7">
             <img src={userPic} alt="Dollie Blair" />
 
