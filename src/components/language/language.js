@@ -1,7 +1,8 @@
 const languageText = {
 	uz: {
 		header: {
-			title: 'bosh sahifa',
+			title: 'Asosiy',
+			about: 'Biz haqimizda',
 		},
 		sidebar: {
 			home: 'Asosiy',
@@ -9,7 +10,8 @@ const languageText = {
 	},
 	ru: {
 		header: {
-			title: 'Главние паге',
+			title: 'Главние',
+			about: 'о нац',
 		},
 		sidebar: {
 			home: 'Главние',
@@ -17,7 +19,8 @@ const languageText = {
 	},
 	en: {
 		header: {
-			title: 'Home page',
+			title: 'Home',
+			about: 'About',
 		},
 		sidebar: {
 			home: 'Main',

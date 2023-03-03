@@ -1,11 +1,19 @@
 import img from '../../assets/smallCardImg.jpg';
 import userPic from '../../assets/cardImg.png';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { CounterContext } from '../context/counterContext';
-// import { CounterContext } from '../../App';
+import SmallCardList from './SmallCardList';
 
 export function SmallCard() {
-	const { setCounter } = useContext(CounterContext);
+	const [topVideos, setTopVideos] = useState([]);
+
+	useEffect(() => {
+		fetch('https://63d3e856a93a149755b5c8f1.mockapi.io/products')
+			.then((res) => res.json())
+			.then((data) => {
+				setTopVideos(data);
+			});
+	}, []);
 
 	return (
 		<div>
@@ -15,60 +23,7 @@ export function SmallCard() {
 				<h2 className='ml-4'>Dollie Blair</h2>
 			</div>
 
-			<ul className='flex space-x-10'>
-				<li
-					onClick={() => {
-						setCounter((prev) => prev + 1);
-					}}
-					className='w-64'>
-					<img
-						src={img}
-						alt='A Brief History Of Creation'
-						className='mb-3'
-					/>
-					<h4>A Brief History Of Creation</h4>
-					<div className='flex justify-between'>
-						<p>80k views · 3 days ago</p>
-						<p>Dollie Blair</p>
-					</div>
-				</li>
-				<li className='w-64'>
-					<img
-						src={img}
-						alt='A Brief History Of Creation'
-						className='mb-3'
-					/>
-					<h4>A Brief History Of Creation</h4>
-					<div className='flex justify-between'>
-						<p>80k views · 3 days ago</p>
-						<p>Dollie Blair</p>
-					</div>
-				</li>
-				<li className='w-64'>
-					<img
-						src={img}
-						alt='A Brief History Of Creation'
-						className='mb-3'
-					/>
-					<h4>A Brief History Of Creation</h4>
-					<div className='flex justify-between'>
-						<p>80k views · 3 days ago</p>
-						<p>Dollie Blair</p>
-					</div>
-				</li>
-				<li className='w-64'>
-					<img
-						src={img}
-						alt='A Brief History Of Creation'
-						className='mb-3'
-					/>
-					<h4>A Brief History Of Creation</h4>
-					<div className='flex justify-between'>
-						<p>80k views · 3 days ago</p>
-						<p>Dollie Blair</p>
-					</div>
-				</li>
-			</ul>
+			<SmallCardList posts={topVideos} />
 		</div>
 	);
 }

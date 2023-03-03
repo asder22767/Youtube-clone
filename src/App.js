@@ -1,24 +1,42 @@
 import './css/output.css';
-import { MiddleCard } from './components/middleCard/middleCard';
-import { SmallCard } from './components/smallCard/SmallCard';
-import Layout from './components/Layout/Layout';
+
 import React from 'react';
 import CounterContextProvider from './components/context/counterContext';
 import LanguageContextProvider from './components/context/languageContext';
+import {
+	BrowserRouter,
+	createBrowserRouter,
+	Route,
+	RouterProvider,
+	Routes,
+} from 'react-router-dom';
+
+import Layout from './components/Layout/Layout';
+
+import Home from './pages/Home';
+import About from './pages/About';
+import NotFound from './pages/NotFound';
+import SingleVideo from './pages/SingleVideo';
+import SingleAbout from './pages/SingleAbout';
 
 function App() {
 	return (
 		<CounterContextProvider>
 			<LanguageContextProvider>
-				<Layout>
-					<div className='space-y-16'>
-						<SmallCard />
+				<BrowserRouter>
+					<Routes>
+						<Route index element={<Home />} />
+						<Route path='/about' element={<About />}>
+							<Route
+								path='/about/user'
+								element={<SingleAbout />}
+							/>
+						</Route>
 
-						<MiddleCard />
-
-						{/* <SmallCard /> */}
-					</div>
-				</Layout>
+						<Route path='videos/:id' element={<SingleVideo />} />
+						<Route path='*' element={<NotFound />} />
+					</Routes>
+				</BrowserRouter>
 			</LanguageContextProvider>
 		</CounterContextProvider>
 	);

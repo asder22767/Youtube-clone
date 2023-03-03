@@ -9,10 +9,13 @@ import { CounterContext } from '../context/counterContext';
 import { useContext } from 'react';
 import { LanguageContext } from '../context/languageContext';
 import languageText from '../language/language';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 export function Header() {
 	const { counter } = useContext(CounterContext);
 	const { setLanguage, language } = useContext(LanguageContext);
+
+	const { pathname } = useLocation();
 
 	return (
 		<header className='header mt-3 mb-8'>
@@ -50,7 +53,38 @@ export function Header() {
 						</form>
 					</div>
 
-					<h2>{languageText[language].header.title}</h2>
+					<nav>
+						<ul className='flex gap-7justify-between'>
+							<li className=' ml-3 '>
+								<NavLink
+									className={(props) => {
+										return props.isActive
+											? 'border-b-violet-900 border-b-2'
+											: undefined;
+									}}
+									to={'/'}
+									// className={
+									// 	pathname === '/'
+									// 		? 'border-b-violet-900 border-b-2'
+									// 		: ''
+									// }
+								>
+									{languageText[language].header.title}
+								</NavLink>
+							</li>
+							<li className=' ml-3 '>
+								<NavLink
+									to={'/about'}
+									className={(props) =>
+										props.isActive
+											? 'border-b-violet-900 border-b-2'
+											: ''
+									}>
+									{languageText[language].header.about}
+								</NavLink>
+							</li>
+						</ul>
+					</nav>
 
 					<div className='header__wrapper-right'>
 						<ul className='header__btn-list flex items-center'>
