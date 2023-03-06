@@ -6,16 +6,18 @@ import dots from '../../assets/dotsIcon.svg';
 import notifications from '../../assets/bellIcon.svg';
 import userPic from '../../assets/userpic.svg';
 import { CounterContext } from '../context/counterContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { LanguageContext } from '../context/languageContext';
 import languageText from '../language/language';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../context/authContext';
 
 export function Header() {
 	const { counter } = useContext(CounterContext);
 	const { setLanguage, language } = useContext(LanguageContext);
+	const [isOpenDropdown, setIsOpenDropdown] = useState(false);
 
-	const { pathname } = useLocation();
+	const { setIsLogin } = useContext(AuthContext);
 
 	return (
 		<header className='header mt-3 mb-8'>
@@ -143,16 +145,35 @@ export function Header() {
 								</button>
 							</li>
 
-							<li className='header__btn-items'>
-								<button className='header__btns'>
-									<img
-										src={userPic}
-										alt=''
-										className='header__btn-img'
-										width='40'
-										height='40'
-									/>
-								</button>
+							<li
+								onClick={() => {
+									setIsOpenDropdown((prev) => !prev);
+								}}
+								className='header__btn-items relative cursor-pointer'>
+								<img
+									src={userPic}
+									alt=''
+									className='header__btn-img'
+									width='40'
+									height='40'
+								/>
+								{isOpenDropdown && (
+									<div className='absolute bg-slate-900 right-5 top-full p-4 '>
+										<Link
+											to={'/channel'}
+											className=' text-white mb-2 block'>
+											Channel
+										</Link>
+
+										<button
+											onClick={() => {
+												setIsLogin(false);
+											}}
+											className='text-white'>
+											Logout
+										</button>
+									</div>
+								)}
 							</li>
 						</ul>
 					</div>
