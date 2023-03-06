@@ -1,20 +1,16 @@
-import img from '../../assets/smallCardImg.jpg';
 import userPic from '../../assets/cardImg.png';
-import { useContext, useEffect, useState } from 'react';
-import { CounterContext } from '../context/counterContext';
+
 import SmallCardList from './SmallCardList';
+import useFetch from '../../hooks/useFetch';
 
 export function SmallCard() {
-	const [topVideos, setTopVideos] = useState([]);
+	const [topVideos] = useFetch(
+		'https://63d3e856a93a149755b5c8f1.mockapi.io/products'
+	);
+	const [users] = useFetch('https://jsonplaceholder.typicode.com/users/');
 
-	useEffect(() => {
-		fetch('https://63d3e856a93a149755b5c8f1.mockapi.io/products')
-			.then((res) => res.json())
-			.then((data) => {
-				setTopVideos(data);
-			});
-	}, []);
-
+	console.log(users);
+	console.log(topVideos);
 	return (
 		<div>
 			<div className='flex items-center mb-7'>
