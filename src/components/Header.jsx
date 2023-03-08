@@ -6,11 +6,12 @@ import dots from "./../assets/images/dotsIcon.svg";
 import notifications from "./../assets/images/bellIcon.svg";
 import userPic from "./../assets/images/userpic.svg";
 import { Buttons } from "./Buttons";
-
-export function Header () {
+import { Link } from "react-router-dom";
+ 
+export default function Header () {
     return (
-        <header className="header pt-24">
-            <div className="container mx-auto px-6 fixed top-0 left-0 bg-white pt-3 pb-8">
+        <header className="header pt-20">
+            <div className="container mx-auto px-6 fixed top-0 left-0 bg-white py-4">
                 <div className="header__wrapper flex justify-between items-center">
                     <div className="header__wrapper-left flex items-center">
                         <button type="button" title="burger-menu"
@@ -18,9 +19,9 @@ export function Header () {
                             <img src={burgerMenu} alt="icon" width="20" height="17"/>
                         </button>
 
-                        <a href="/" className="header__logo mr-28">
+                        <Link to={"/"} className="header__logo mr-28">
                             <img src={logo} alt="Logo of Youtube" width="116" height="25"/>
-                        </a>
+                        </Link>
 
                         <form className="header__form">
                             <input type="text" className="header__input-search bg-input w-560 p-2 px-4 rounded-3xl" title="search" placeholder="Search"/>

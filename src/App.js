@@ -1,24 +1,17 @@
-import "./css/output.css";
-import { MiddleCard } from "./components/middleCard";
-import { SmallCard } from "./components/SmallCard";
-import { Rendering } from "./utils/Rendering";
-import { BASE_URL } from "./utils/constantas";
-import Layout from "./components/Layout";
+import Home from "./Pages/Home";
+import { Route, Routes } from "react-router-dom";
+import SingleVideo from "./Pages/SingleVideo";
+import NotFound from "./Pages/NotFound";
 
 function App() {
 
-  const data = Rendering(BASE_URL + "books");
   return (
-    <Layout>
-       <div className="space-y-16 pl-270">
-          <SmallCard data={data}/>
-              
-          <MiddleCard data={data}/>
-            
-          <SmallCard data={data}/>
-        </div>
-    </Layout>
+    <Routes>
+      <Route index element={<Home/>}/>
+      <Route path="video/:id" element={<SingleVideo/>}/>
+      <Route path="*" element={<NotFound/>}/>
+    </Routes>
   );
 }
 
-export default App;
+export default App; 
