@@ -9,8 +9,6 @@ export function SmallCard() {
 	);
 	const [users] = useFetch('https://jsonplaceholder.typicode.com/users/');
 
-	console.log(users);
-	console.log(topVideos);
 	return (
 		<div>
 			<div className='flex items-center mb-7'>

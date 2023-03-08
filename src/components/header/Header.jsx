@@ -5,19 +5,20 @@ import camera from '../../assets/cameraIcon.svg';
 import dots from '../../assets/dotsIcon.svg';
 import notifications from '../../assets/bellIcon.svg';
 import userPic from '../../assets/userpic.svg';
-import { CounterContext } from '../context/counterContext';
 import { useContext, useState } from 'react';
 import { LanguageContext } from '../context/languageContext';
 import languageText from '../language/language';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../context/authContext';
+import { useSelector } from 'react-redux';
 
 export function Header() {
-	const { counter } = useContext(CounterContext);
 	const { setLanguage, language } = useContext(LanguageContext);
 	const [isOpenDropdown, setIsOpenDropdown] = useState(false);
 
 	const { setIsLogin } = useContext(AuthContext);
+
+	const { favoriteVideos } = useSelector((state) => state.favorite);
 
 	return (
 		<header className='header mt-3 mb-8'>
@@ -134,7 +135,7 @@ export function Header() {
 
 							<li className='header__btn-items mr-10'>
 								<button className='header__btns'>
-									{counter}
+									{favoriteVideos.length}
 									<img
 										src={notifications}
 										alt=''
