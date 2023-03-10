@@ -2,10 +2,12 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ADD } from '../../store/reducers/favoriteReducer';
+import { add, remove } from '../../store/slicers/favoriteSlicer';
 
 const SmallCardList = (props) => {
 	const dispatch = useDispatch();
 
+	console.log(props);
 	const { favoriteVideos } = useSelector((state) => state.favorite);
 
 	const updateLikeHandler = (video) => {
@@ -18,9 +20,9 @@ const SmallCardList = (props) => {
 		});
 
 		if (hasVideo) {
-			dispatch({ type: 'remove', payload: video });
+			dispatch(remove(video));
 		} else {
-			dispatch({ type: ADD, payload: video });
+			dispatch(add(video));
 		}
 	};
 

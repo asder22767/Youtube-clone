@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Layout from '../components/Layout/Layout';
+import { BASE_URL } from '../services/baseUrl';
 
-import { BASE_URL } from '../utils/constantas';
 const SingleVideo = () => {
 	const { id } = useParams();
 	const [videoData, setVideoData] = useState({});

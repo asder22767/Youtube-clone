@@ -1,4 +1,10 @@
-import { createStore } from 'redux';
-import { rootReducer } from './reducers';
+import { configureStore } from '@reduxjs/toolkit';
+import { counterReducer } from './slicers/counterSlicer';
+import { favoriteReducer } from './slicers/favoriteSlicer';
 
-export const store = createStore(rootReducer);
+export const store = configureStore({
+	reducer: {
+		counter: counterReducer,
+		favorite: favoriteReducer,
+	},
+});

@@ -2,7 +2,9 @@ const initialState = {
 	counter: 0,
 	isLogin: false,
 };
+
 const counterReducer = (state = initialState, action) => {
+
 	if (action.type === 'decrement') {
 		return {
 			...state,
@@ -30,4 +32,4 @@ const counterReducer = (state = initialState, action) => {
 	return state;
 };
 
-export default counterReducer
+export default counterReducer;

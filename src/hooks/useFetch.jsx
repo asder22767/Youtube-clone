@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
+import { getProducts } from '../services/productsApi';
 
 const useFetch = (API) => {
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		fetch(API)
-			.then((res) => res.json())
-			.then((data) => {
-				setData(data);
-			});
+		getProducts().then((data) => {
+			setData(data.data);
+		});
 	}, []);
 
 	return [data];
