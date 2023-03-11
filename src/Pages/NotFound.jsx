@@ -4,9 +4,9 @@ import NotAvailable from "../components/NotAvailable";
 const NotFound = () => {
   return (
     <Layout isSinglePage={true}>
-      <NotAvailable/>
+      <NotAvailable />
     </Layout>
-  )
-}
+  );
+};
 
 export default NotFound;
