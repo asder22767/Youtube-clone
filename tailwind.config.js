@@ -28,6 +28,15 @@ module.exports = {
         270: "270px",
       },
 
+      borderRadius: {
+        circle: "50%",
+      },
+
+      translate: {
+        left: "-175%",
+        top: "-78px",
+      },
+
       fontFamily: {
         mulish: ["Mulish"],
       },
@@ -35,4 +44,4 @@ module.exports = {
   },
 
   plugins: [require("tailwind-scrollbar-hide")],
-};
+}

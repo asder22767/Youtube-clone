@@ -1,16 +1,25 @@
-import ListVideos from "./ListVideos";
-import { Rendering } from "./../utils/Rendering";
-import { SingleVideoRendering } from "../utils/SingleVideoRendering";
-import { BASE_URL } from "../utils/constantas";
-import { useParams } from "react-router-dom";
+import ListVideos from "./ListVideos"
+import { Rendering } from "./../utils/Rendering"
+import { SingleVideoRendering } from "../utils/SingleVideoRendering"
+import { BASE_URL } from "../utils/constantas"
+import { Link, useParams } from "react-router-dom"
+import { useState } from "react"
+import SinglePageButtons from "./SinglePageButtons"
+import SinglePageSubs from "./SinglePageSubs"
 
 const SingleVideoComponent = () => {
-  const data = Rendering(BASE_URL + "books");
-  const id = useParams();
-  const search = BASE_URL + "books/" + id.id;
-  const videoInfo = SingleVideoRendering(search, id);
+  const data = Rendering(BASE_URL + "books")
+  const id = useParams()
+  const search = BASE_URL + "books/" + id.id
+  const videoInfo = SingleVideoRendering(search, id)
+  const [modal, setModal] = useState(false)
+
+  const toggleModal = () => {
+    setModal(!modal)
+  }
+
   return (
-    <section>
+    <section onClick={modal ? toggleModal : ""}>
       <div className="container mx-auto px-6">
         <div className="flex">
           <div className="left  pl-8 pr-6">
@@ -27,7 +36,22 @@ const SingleVideoComponent = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold">{videoInfo.name}</h3>
+              <div className="flex space-x-3 mb-3">
+                <h3 className="text-xl font-bold">{videoInfo.name}</h3>
+                <Link className="text-blue-500 text-xl font-bold">
+                  @begreater
+                </Link>
+              </div>
+
+              <div className="flex justify-between">
+                <SinglePageSubs />
+
+                <SinglePageButtons
+                  modal={modal}
+                  setModal={setModal}
+                  toggleModal={toggleModal}
+                />
+              </div>
             </div>
           </div>
           <div className="right">
@@ -36,7 +60,7 @@ const SingleVideoComponent = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default SingleVideoComponent;
+export default SingleVideoComponent

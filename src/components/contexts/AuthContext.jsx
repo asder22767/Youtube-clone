@@ -8,10 +8,10 @@ const AuthContextProvider = ({ children }) => {
   )
 
   useEffect(() => {
-    if (!isLogin) {
+    if (isLogin) {
       localStorage.removeItem("token")
     }
-  }, [isLogin])
+  }, [])
   return (
     <AuthContext.Provider value={{ isLogin, setIsLogin }}>
       {children}

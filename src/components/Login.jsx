@@ -1,7 +1,6 @@
 import { Facebook, GitHub, Google } from "@mui/icons-material"
-import axios from "axios"
 import { useContext, useState } from "react"
-import { Link, redirect } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { AuthContext } from "./contexts/AuthContext"
 
 const Login = () => {
@@ -38,6 +37,7 @@ const Login = () => {
       .then((data) => {
         localStorage.setItem("token", data.token)
         if (data.token) setIsLogin(true)
+        console.log(isLogin)
       })
       .catch((err) => {
         setErrorMessage({
