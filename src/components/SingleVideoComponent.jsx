@@ -6,6 +6,7 @@ import { Link, useParams } from "react-router-dom"
 import { useState } from "react"
 import SinglePageButtons from "./SinglePageButtons"
 import SinglePageSubs from "./SinglePageSubs"
+import Description from "./Description"
 
 const SingleVideoComponent = () => {
   const data = Rendering(BASE_URL + "books")
@@ -43,7 +44,7 @@ const SingleVideoComponent = () => {
                 </Link>
               </div>
 
-              <div className="flex justify-between">
+              <div className="flex justify-between mb-3">
                 <SinglePageSubs />
 
                 <SinglePageButtons
@@ -52,6 +53,8 @@ const SingleVideoComponent = () => {
                   toggleModal={toggleModal}
                 />
               </div>
+
+              <Description />
             </div>
           </div>
           <div className="right">

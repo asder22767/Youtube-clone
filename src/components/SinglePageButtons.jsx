@@ -12,28 +12,28 @@ const SinglePageButtons = ({ modal, setModal, toggleModal }) => {
   return (
     <div className="flex items-center space-x-2 relative">
       <div className="flex items-center">
-        <button className="flex items-center py-2 px-3 bg-gray-200 rounded-l-3xl">
+        <button className="flex items-center py-2 px-3 bg-gray-100 rounded-l-3xl">
           <ThumbUpOutlinedIcon className="mr-2" />
           <span className="border-r-2 border-grayish pr-3">925</span>
         </button>
-        <button className="flex items-center py-2 pr-3 bg-gray-200 rounded-r-3xl">
+        <button className="flex items-center py-2 pr-3 bg-gray-100 rounded-r-3xl">
           <ThumbDownOutlinedIcon className="mr-2" />
         </button>
       </div>
 
-      <button className="flex items-center py-2 px-3 bg-gray-200 rounded-3xl">
+      <button className="flex items-center py-2 px-3 bg-gray-100 rounded-3xl">
         <ShareIcon className="mr-1" />
         Share
       </button>
 
-      <button className="flex items-center py-2 px-3 bg-gray-200 rounded-3xl">
+      <button className="flex items-center py-2 px-3 bg-gray-100 rounded-3xl">
         <LibraryAddOutlinedIcon className="mr-1" />
         Save
       </button>
 
       <button
         onClick={toggleModal}
-        className="flex items-center py-2 px-2 bg-gray-200 rounded-circle"
+        className="flex items-center py-2 px-2 bg-gray-100 rounded-circle"
       >
         <MoreHorizOutlinedIcon />
       </button>

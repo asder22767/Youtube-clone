@@ -25,6 +25,8 @@ module.exports = {
       },
 
       spacing: {
+        "5px": "5px",
+        100: "100px",
         270: "270px",
       },
 
@@ -39,6 +41,7 @@ module.exports = {
 
       fontFamily: {
         mulish: ["Mulish"],
+        roboto: ["Roboto"],
       },
     },
   },
